@@ -27,6 +27,8 @@ apt-get update -y && apt-get install -y \
     zlib1g-dev \
     libbz2-dev \
     liblz4-dev \
+    docker \
+    docker-compose \
     libgflags-dev \
     python3-libnacl=1.6.1 \
     python3-sortedcontainers=1.5.7 \
@@ -35,6 +37,7 @@ apt-get update -y && apt-get install -y \
     indy-plenum=1.13.1~rc4 \
     indy-node=1.13.2~rc6 \
     libssl1.0.0 \
+    python3-pip \
     ursa=0.3.2-1 \
     && mv /usr/lib/ursa/* /usr/lib && rm -rf /usr/lib/ursa
 
@@ -49,3 +52,7 @@ apt-get update -y && apt install -y \
 
 #Install testinfra
 pip3 install testinfra
+pip3 install scripts/performance
+
+
+./v-network/manage build
